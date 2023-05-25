@@ -1,14 +1,14 @@
 
 
-## Intento 1
+# Problema del productor-consumidor con un buffer de tamaño 1
 
 Problema del productor consumidor con un buffer de tamaño 1. El problema solo funciona con un solo productor
 
-### Pruebas
+## Pruebas
 
 
 |#|Producers|Consumers|Loops|Observaciones|
-|---|---|---|---|
+|---|---|---|---|---|
 |1|1|1|20|Funciona|
 |2|1|2|20|Funciona|
 |3|2|1|20|No funciona con varios productores|
