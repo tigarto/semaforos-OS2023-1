@@ -1,6 +1,27 @@
-# semaforos-OS2023-1
-Ejemplos de semaforos tomados del libro de Operating Systems: Three Easy Pieces (https://pages.cs.wisc.edu/~remzi/OSTEP/)
+# Ejemplos con semaforos
+Estos ejemplos fueron tomados y adaptados(algunos de ellos) del libro de Operating Systems: Three Easy Pieces ([link](https://pages.cs.wisc.edu/~remzi/OSTEP/)). Los ejemplo se dividen de la siguiente manera
 
+## Ejemplos - Parte 1
+
+Implementación de locks y variables de condicion usando semaforos.
+1. Implementación de locks usando semaforos
+2. Implementación de variables de condición por medio de semaforos.
+
+## Ejemplos - Parte 2
+
+En esta parte se implemento **The Producer/Consumer (Bounded Buffer) Problem** todo el recorrido se encuentra en el siguiente link [producer_consumer](producer_consumer/) de la siguiente manera:
+1. Caso de un buffer de tamaño 1
+2. Ejemplo del buffer limitado (buffer circular) el cual se divide en los siguientes analisis:
+   * Sección **First Attempt** (link [pc_attemp1](producer_consumer/circular_buffer/pc_attemp1/))
+   * Sección **A Solution: Adding Mutual Exclusion** (link [pc_attemp2](producer_consumer/circular_buffer/pc_attemp2/))
+   * Secciones **Avoiding Deadlock** y **At Last, A Working Solution** (link [pc_work](producer_consumer/circular_buffer/pc_work/))
+   
+   La implementación final del libro esta en el siguiente [link](producer_consumer/work/)
+
+## Ejemplos parte 3
+
+1. Sección **Reader-Writer Locks** (link [reader_writer_locks](reader_writer_locks/))
+2. Sección **The Dining Philosophers** (link [dining_philosophers](dining_philosophers/))
 
 ## Enlaces de utilidad
 1. https://hpc-tutorials.llnl.gov/

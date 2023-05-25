@@ -43,7 +43,8 @@ int get()
 /** ------------------- Funciones del productor y consumidor ---------------------- **/
 
 void *producer(void *arg) {
-  printf("Begin -> Producer[%lX]\n", pthread_self());
+  int num_producer = *((int *)arg) + 1;
+  printf("Begin -> Producer %d\n", num_producer);
   int i;
   for (i = 0; i < loops; i++)
   {
@@ -52,6 +53,7 @@ void *producer(void *arg) {
     put(i); // Line P2
     sem_post(&mutex); // Line P2.5 (AND HERE)
     sem_post(&full); // Line P3
+    printf("P%d: B[%d] <- %d\n", num_producer , fill, i);
   }
 
   // end case
@@ -62,14 +64,16 @@ void *producer(void *arg) {
     put(-1);
     sem_post(&mutex); 
     sem_post(&full);
+    printf("P%d: B[%d] <- %d\n", num_producer , fill, -1);
   }
-  printf("End -> Producer [%lX]\n", pthread_self());
+  printf("End -> Producer %d\n", num_producer);
   return NULL;
 }
 
 void *consumer(void *arg)
 {
-  printf("Begin -> Consumer[%lX]\n", pthread_self());
+  int num_consumer = *((int *)arg) + 1;
+  printf("Begin -> Consumer %d\n", num_consumer);
   int tmp = 0;
   while (tmp != -1)
   {
@@ -78,9 +82,9 @@ void *consumer(void *arg)
     tmp = get(); // Line C2
     sem_post(&mutex); // Line C2.5 (AND HERE)
     sem_post(&empty); // Line C3
-    printf("C[%lX] <- %d\n", pthread_self(), tmp);
+    printf("[%d] <- %d\n", num_consumer, tmp);
   }
-  printf("End -> Consumer[%lX]\n", pthread_self());
+  printf("End -> Consumer %d\n", num_consumer);
   return NULL;
 }
 
@@ -91,18 +95,9 @@ void *consumer(void *arg)
 
 /** ----------------------- Funcion Main -------------------------- **/
 int main(int argc, char *argv[]) {
-  /**
-   ----------- Pruebas --------
-   1. consumers = 1; consumers: 1; loops = 20; MAX = 1 -> (OK)
-   2. producers = 1; consumers: 2; loops = 20; MAX = 1 -> (OK)
-   3. producers = 2; consumers: 1; loops = 20; MAX = 1 -> (No OK)
-  */
-
-  // char id_producer = 'a';
-  // char id_consumer = 'a';
 
   int i;
-  loops = 20;    // Cambiar
+  loops = 50;    // Cambiar
   producers = 1;  // Cambiar 
   consumers = 2;  // Cambiar
 
@@ -118,10 +113,10 @@ int main(int argc, char *argv[]) {
   pthread_t pid[PMAX], cid[CMAX];
   // ----------------- Inicializacion -----------------
   for (i = 0; i < producers; i++) {
-    Pthread_create(&pid[i], NULL, producer, NULL);
+    Pthread_create(&pid[i], NULL, producer, (void*)&i);
   }
   for (i = 0; i < consumers; i++) {
-    Pthread_create(&cid[i], NULL, consumer, NULL);
+    Pthread_create(&cid[i], NULL, consumer, (void*)&i);
   }
 
   // -----------------  Espera  -----------------
