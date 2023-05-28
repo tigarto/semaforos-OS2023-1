@@ -34,3 +34,14 @@ En esta parte se implemento **The Producer/Consumer (Bounded Buffer) Problem** t
 8. https://github.com/okeeffed/cheat-sheets/blob/master/COMP3520-OS/Pthread.md
 9. https://appsrv.cse.cuhk.edu.hk/~ericlo/?page_id=145
 10. https://w3.cs.jmu.edu/kirkpams/OpenCSF/Books/csf/html/index.html
+11. https://api.riot-os.org/group__posix__semaphore.html
+12. https://www.gnu.org/software/libc/manual/html_node/Semaphores.html
+13. http://profesores.elo.utfsm.cl/~agv/elo330/2s19/lectures/
+14. http://profesores.elo.utfsm.cl/~agv/elo330/2s19/
+15. https://see.stanford.edu/materials/icsppcs107/23-Concurrency-Examples.pdf
+16. https://sites.cs.ucsb.edu/~rich/class/cs170/notes/Semaphores/index.html
+17. https://www3.physnet.uni-hamburg.de/physnet/Tru64-Unix/HTML/APS33DTE/DOCU_010.HTM
+18. https://www.ibm.com/docs/en/i/7.4?topic=programs-example-using-semaphore-set-shared-memory-functions
+19. https://www.cs.cornell.edu/courses/cs4410/2018su/lectures/lec07-sema.html
+20. https://www.cs.cornell.edu/courses/cs4410/2018su/
+21. https://esp32tutorials.com/esp32-esp-idf-freertos-semaphore-tutorial/
