@@ -45,3 +45,5 @@ En esta parte se implemento **The Producer/Consumer (Bounded Buffer) Problem** t
 19. https://www.cs.cornell.edu/courses/cs4410/2018su/lectures/lec07-sema.html
 20. https://www.cs.cornell.edu/courses/cs4410/2018su/
 21. https://esp32tutorials.com/esp32-esp-idf-freertos-semaphore-tutorial/
+22. https://courses.washington.edu/cp105/06_Synchronization/Semaphores.html
+23. https://courses.washington.edu/cp105/index.html
